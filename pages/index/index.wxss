@@ -3,4 +3,18 @@
 }
 .swiper_image{
   width: 100%;
+  height: 340rpx;
 }
+
+.index_category{
+  display: flex;
+}
+.category_navigator{
+  flex:1;
+  padding: 20rpx;
+}
+.category_image{
+  width: 100%;
+}
+
+

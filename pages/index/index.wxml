@@ -4,11 +4,21 @@
   <SearchInput/>
   <!-- 搜索结束 -->
   <!-- 轮播图开始 -->
-  <swiper class="swiper" indicator-active-color="#f22" indicator-dots autoplay circular>
-    <swiper-item wx:for="{{swiperList}}" wx:key="goods_id">
+  <view>
+    <swiper class="swiper" indicator-active-color="#f22" indicator-dots autoplay circular>
+    <swiper-item wx:for="{{swiperData}}" wx:key="goods_id">
       <navigator class="swiper_navigator">
-        <image mode="widthFix" class="swiper_image"  src="{{item.image_src}}"></image>
+        <image class="swiper_image"  src="{{item.image_src}}"></image>
       </navigator>
     </swiper-item>
   </swiper>
+  </view>
+  <!-- 轮播图结束 -->
+  <!-- 导航类目开始 -->
+  <view class="index_category">
+    <navigator class="category_navigator" wx:for="{{categoryData}}" wx:key="*this">
+      <image class="category_image" mode="widthFix" src="{{item.image_src}}"/>
+    </navigator>
+  </view>
+  <!-- 导航类目结束 -->
 </view>

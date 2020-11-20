@@ -24,7 +24,7 @@
 			"outputPath": ""
 		}
 	},
-	"compileType": "plugin",
+	"compileType": "miniprogram",
 	"libVersion": "2.0.4",
 	"appid": "wxc3743ab0af17872f",
 	"projectname": "miniprogram-1",

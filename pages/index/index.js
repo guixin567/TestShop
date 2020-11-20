@@ -5,15 +5,37 @@ const app = getApp()
 
 Page({
   data: {
-    swiperList:[]
+    swiperData:[],
+    categoryData:[],
+
   },
   //页面开始加载
   onLoad:function(option){
+    this.getSwiperData();
+    this.getCategoryData();
+  },
+
+  //获取轮播数据
+  getSwiperData(){
     request({url:'https://api-hmugo-web.itheima.net/api/public/v1/home/swiperdata'})
     .then(result =>{
       this.setData({
-        swiperList:result.data.message
+        swiperData:result.data.message
+      })
+    });
+  },
+
+  //分类数据
+  getCategoryData(){
+    request({url:"https://api-hmugo-web.itheima.net/api/public/v1/home/catitems"})
+    .then(response=>{
+      console.log(response);
+      this.setData({
+        categoryData:response.data.message
       })
     })
-  }
+  },
+
 })
+
+
