@@ -19,31 +19,31 @@ Page({
 
   //获取轮播数据
   getSwiperData(){
-    request({url:'https://api-hmugo-web.itheima.net/api/public/v1/home/swiperdata'})
-    .then(result =>{
+    request({url:'home/swiperdata'})
+    .then(response =>{
       this.setData({
-        swiperData:result.data.message
+        swiperData:response
       })
     });
   },
   //分类数据
   getCategoryData(){
-    request({url:"https://api-hmugo-web.itheima.net/api/public/v1/home/catitems"})
+    request({url:"home/catitems"})
     .then(response=>{
       console.log(response);
       this.setData({
-        categoryData:response.data.message
+        categoryData:response
       })
     })
   },
   //楼层数据
   getFloorData(){
-    request({url:"https://api-hmugo-web.itheima.net/api/public/v1/home/floordata"})
+    request({url:"home/floordata"})
     .then(response=>{
       this.setData({
-        floorData:response.data.message
+        floorData:response
       })
-      console.log(response.data.message[0].product_list[0].image_src)
+      console.log(response[0].product_list[0].image_src)
     })
   }
 

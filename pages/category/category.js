@@ -26,28 +26,24 @@ Page({
     const categoryCache = wx.getStorageSync('category_cache')
     let cacheTime = 5 * 60 * 1000 
     if(categoryCache && Date.now() - categoryCache.time < cacheTime){
-      console.log("缓存"+ Date.now() + categoryCache.time)
       this.setData({
         leftMenuList:categoryCache.data.map(v=>v.cat_name),
         rightCategoryList:categoryCache.data[0].children
       })
     }else{
-      console.log("无缓存")
       this.getCategoryData();  
     }
     
   },
 
   //获取分类接口
-  getCategoryData(){
-    request({url:"https://api-hmugo-web.itheima.net/api/public/v1/categories"})
-    .then(response=>{
-      this.categoryList = response.data.message,
-      wx.setStorageSync('category_cache', {time:Date.now(),data:this.categoryList})
-      this.setData({
-        leftMenuList:this.categoryList.map(v=>v.cat_name),
-        rightCategoryList:this.categoryList[0].children
-      })
+  async getCategoryData(){
+    const response = await request({url:"categories"})
+    this.categoryList = response,
+    wx.setStorageSync('category_cache', {time:Date.now(),data:this.categoryList})
+    this.setData({
+      leftMenuList:this.categoryList.map(v=>v.cat_name),
+      rightCategoryList:this.categoryList[0].children
     })
   },
   onMenuClick:function(event){
