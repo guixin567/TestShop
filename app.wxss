@@ -11,4 +11,9 @@ page,view,swiper,swiper-item,text,navigator{
 page{
   --themeColor:#f22;
   --font-size:28rpx;
+  --font-color:#333;
+}
+
+image{
+  width: 100%;
 }
