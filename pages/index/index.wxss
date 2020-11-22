@@ -16,5 +16,32 @@
 .category_image{
   width: 100%;
 }
+/*楼层*/
+.floor_title{
+  width: 100%;
+}
+.floor_content{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 100%;
+  margin-bottom: 30rpx;
+}
+.floor_big{
+  width: 230rpx;
+  height: 380rpx;
+}
+.floor_small{
+  width: 230rpx;
+  height: 380rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.floor_small_image{
+  width: 230rpx;
+  height: 185rpx;
+}
+
 
 

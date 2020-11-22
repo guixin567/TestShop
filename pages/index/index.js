@@ -7,12 +7,14 @@ Page({
   data: {
     swiperData:[],
     categoryData:[],
+    floorData:[],
 
   },
   //页面开始加载
   onLoad:function(option){
     this.getSwiperData();
     this.getCategoryData();
+    this.getFloorData();
   },
 
   //获取轮播数据
@@ -24,7 +26,6 @@ Page({
       })
     });
   },
-
   //分类数据
   getCategoryData(){
     request({url:"https://api-hmugo-web.itheima.net/api/public/v1/home/catitems"})
@@ -35,6 +36,16 @@ Page({
       })
     })
   },
+  //楼层数据
+  getFloorData(){
+    request({url:"https://api-hmugo-web.itheima.net/api/public/v1/home/floordata"})
+    .then(response=>{
+      this.setData({
+        floorData:response.data.message
+      })
+      console.log(response.data.message[0].product_list[0].image_src)
+    })
+  }
 
 })
 
