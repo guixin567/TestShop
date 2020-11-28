@@ -1,2 +1,22 @@
 <!--pages/goods_list/goods_list.wxml-->
-<text>pages/goods_list/goods_list.wxml</text>
+<view class="list">
+	<SearchInput />
+	<Tabs tabs="{{tabs}}" bindonTabClick="onTabClick">
+		<view wx:if="{{selectTabIndex == 0}}">
+			<view wx:for="{{goodsList}}">
+        <view class="goods_container">
+        <view class="goods_container_left" >
+         <image mode="widthFix"  src="{{item.goods_small_logo ? item.goods_small_logo : logoImage}}"></image>
+        </view>
+      
+        <view class="goods_container_right">
+          <view class="goods_container_right_name">{{item.goods_name}}</view>
+          <view class="goods_container_right_price">￥{{item.goods_price}}</view>
+        </view>
+        </view>
+      </view>
+		</view>
+		<view wx:if="{{selectTabIndex == 1}}">1</view>
+		<view wx:if="{{selectTabIndex == 2}}">2</view>
+	</Tabs>
+</view>

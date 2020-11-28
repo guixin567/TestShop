@@ -1,7 +1,7 @@
 /* component/SearchInput/SearchInput.wxss */
 .search_input{
   height: 90rpx;
-  background-color: var(--themeColor);
+  background-color: var(--theme-color);
   padding:0rpx 20rpx 20rpx 20rpx;
 }
 .navagator_search{

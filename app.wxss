@@ -9,9 +9,10 @@ page,view,swiper,swiper-item,text,navigator{
 
 /*主题颜色*/
 page{
-  --themeColor:#f22;
+  --theme-color:#f22;
   --font-size:28rpx;
   --font-color:#333;
+  --border-color:#e5e5e5
 }
 
 image{

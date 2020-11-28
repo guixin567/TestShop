@@ -14,7 +14,7 @@
 					{{item1.cat_name}}
 				</view>
 				<view class="right_content_container" >
-					<navigator class="right_content_item" wx:for="{{item1.children}}" wx:for-item="item2">
+					<navigator class="right_content_item" url="/pages/goods_list/goods_list?cid={{item2.cat_id}}" wx:for="{{item1.children}}" wx:for-item="item2">
 						<image class="right_content_item_image" mode="widthFix" src="{{item2.cat_icon}}"></image>
             <view class="right_content_item_name">{{item2.cat_name}}</view>
 					</navigator> 
